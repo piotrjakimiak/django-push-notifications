@@ -52,14 +52,14 @@ def _wns_authenticate(scope="notify.windows.com"):
         raise ImproperlyConfigured(
             'You need to set PUSH_NOTIFICATIONS_SETTINGS["WNS_SECRET_KEY"] to use WNS.'
         )
-        data = {
-            "grant_type": "client_credentials",
-            "client_id": package_id,
-            "client_secret": secret_key,
-            "scope": scope
-        }
+    data = {
+        "grant_type": "client_credentials",
+        "client_id": package_id,
+        "client_secret": secret_key,
+        "scope": scope
+    }
 
-        data_bytes = urlencode(data)
+    data_bytes = urlencode(data)
     headers = {
         "Content-Type": "application/x-www-form-urlencoded",
     }
